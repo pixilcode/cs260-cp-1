@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("/assets/background-texture.png");
+    background-color: #c4f6b9;
+    font-family: Lato, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Source Code Pro', monospace;
+}
+
+p, a {
+    font-size: 1.125rem;
+}
+
+header {
+    background-color: #b1ebe3;
+    padding: 1rem;
+    display: grid;
+    
+    grid-template-areas:
+        "title nav"
+}
+
+header * {
+    margin: 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    grid-area: title;
+}
+
+header .nav-link {
+    color: #2d4c47 !important;
+}
+
+header .active .nav-link {
+    color: #5b998f !important;
+}
+
+header #tagline {
+    display: none;
+}
+
+header nav {
+    grid-area: nav;
+    justify-self: right;
+}
+
+footer {
+    background-color: #7dd0c4;
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0.5rem 5vw;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: underline;
+}
