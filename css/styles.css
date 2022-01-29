@@ -65,3 +65,22 @@ footer a {
     color: #000000;
     text-decoration: underline;
 }
+
+main {
+    margin: 2rem 10vw;
+    line-height: 200%;
+}
+
+main h2 {
+    margin: 2rem 0 1rem;
+}
+
+main h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+main pre {
+    background-color: #a2cc99;
+    border-radius: 0.5rem;
+    padding: 0.5rem 5vw;
+}

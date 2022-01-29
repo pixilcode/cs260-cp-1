@@ -1,3 +1,7 @@
+main {
+    margin: 0;
+}
+
 #about {
     display: grid;
     grid-template-columns: 5vw 90vw 5vw;

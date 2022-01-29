@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <title>Tego</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tego</h1>
+        <p id="tagline">Free monoids to your hearts content</p>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="collapse navbar-collapse navbar-nav" id="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/documentation.html">Documentation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/download.html">Download</a></li>
+                <li class="nav-item"><a class="nav-link" href="/learn.html">Learn</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/pixilcode/tego-lang">Contribute</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="std-lib">
+            <h2>Standard Library</h2>
+            <p>
+                Currently, due to the language being in its preliminary phases, there is no
+                standard library. However, if you would like to help write one, I would definitely
+                appreciate it. Email me at
+                <a href="mailto:brendon.bown@gmail.com">brendon.bown@gmail.com</a>, and I'll direct
+                you in learning more. Or you can
+                <a href="https://github.com/pixilcode/tego-lang">help develop Tego itself</a> so
+                that it can reach a stable phase.</p>
+        </section>
+        <section id="examples">
+            <h2>Examples</h2>
+            <h3>Hello world!</h3>
+            <pre><code>main = "Hello world!"</code></pre>
+            <h3>Add one</h3>
+            <pre><code>main = addOne 1
+
+addOne i = i + 1</code></pre>
+            <h3>Fibbonacci Sequence</h3>
+            <pre><code>main = fib 5
+
+fib = fib' 0 1
+
+fib' a b n =
+	match n to
+	| 0 -> b
+	| n -> fib' b (a + b) (n - 1)</code></pre>
+            <h3>Fibbonacci Sequence (Free Monoids)</h3>
+            <pre><code>main = fibList 45
+
+fibList = fibList' 0 1
+
+fibList' a b n =
+	match n to
+	| 0 -> b
+	| n -> b, fibList' b (a + b) (n - 1)</code></pre>
+            <h3>Primes</h3>
+            <pre><code>main = primes 50
+
+primes = primes' () 2
+
+
+primes' ps curr n =
+	if n <= 0 then
+		ps
+	else if not (isDivisible curr ps) then
+		primes' (ps, curr) (curr + 1) (n - 1)
+	else
+		primes' ps (curr + 1) n
+
+-- Test whether 'n' is divisible by any number in 'primes'
+isDivisible n primes =
+	match primes to
+	| () -> false
+	| p, px -> if n % p == 0 ? true else isDivisible n px</code></pre>
+        </section>
+    </main>
+    <footer>
+        <a href="https://github.com/pixilcode/tego-lang">Contribute</a>
+        <a href="https://github.com/pixilcode/cs260-cp-1">Repository</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
