@@ -84,3 +84,27 @@ main pre {
     border-radius: 0.5rem;
     padding: 0.5rem 5vw;
 }
+
+aside {
+    padding: 0.5rem 5vw;
+    border-radius: 0.5rem;
+    border: 0.25rem #9dea8d solid;
+    background-color: #eafcbd;
+}
+
+/* desktop styles */
+@media only screen and (min-width: 961px) {
+    #tagline {
+        display: block;
+    }
+    
+    nav li {
+        margin: 0 2.5vw;
+    }
+    
+    aside {
+        float: right;
+        width: 20vw;
+        margin: 1rem 2.5vw;
+    }
+}
