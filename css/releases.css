@@ -1,0 +1,22 @@
+hr {
+  border-color: #9ae88b;
+  border-width: 2px;
+}
+
+#releases h3 a {
+  color: #5f8e55;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+#releases h4 {
+  font-size: 1.125rem;
+}
+
+.releaseBody h3 {
+  font-size: 1.0625rem;
+  background-color: #9ae88b88;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  width: fit-content;
+}
